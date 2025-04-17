@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morteza Rezaei | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --neon-green: #39FF14;
+            --matrix-green: #00ff41;
+            --dark-bg: #0a0a0a;
+        }
+
+        body {
+            font-family: 'Source Code Pro', monospace;
+            background: var(--dark-bg);
+            color: var(--matrix-green);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .terminal-header {
+            padding: 2rem;
+            border-bottom: 2px solid var(--neon-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .typewriter h1 {
+            overflow: hidden;
+            border-right: .15em solid var(--neon-green);
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        .skill-graph {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .code-card {
+            background: #001100;
+            padding: 1.5rem;
+            border: 1px solid var(--matrix-green);
+            border-radius: 5px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .code-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px var(--matrix-green);
+        }
+
+
+        .command-animation {
+            display: inline-block;
+            overflow: hidden;
+            border-right: .15em solid var(--neon-green);
+            white-space: nowrap;
+            animation: typing 1.5s steps(30, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: var(--neon-green) }
+        }
+
+        /* Remove animation from original h1 */
+        .typewriter h1 {
+            animation: none;
+            border-right: none;
+        }
+
+        .code-card {
+            background: #001100;
+            padding: 1.5rem;
+            border: 1px solid var(--matrix-green);
+            border-radius: 5px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .code-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 15px var(--matrix-green);
+            animation: glitch 0.5s infinite;
+        }
+
+        .binary-rain {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .binary-digit {
+            position: absolute;
+            color: var(--matrix-green);
+            animation: fall linear infinite;
+            opacity: 0.8;
+            text-shadow: 0 0 5px var(--matrix-green);
+            }
+
+
+        @keyframes fall {
+            0% { transform: translateY(-10vh) translateX(-10px); }
+            100% { transform: translateY(110vh) translateX(10px); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+
+        @media (max-width: 768px) {
+            .typewriter h1 {
+                font-size: 1.2rem;
+                padding: 0 1rem;
+            }
+            
+            .code-card {
+                min-width: 280px;
+            }
+
+            .skill-graph {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .typewriter h1 {
+                font-size: 1rem;
+            }
+            
+            .code-card pre {
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="binary-rain" id="binaryRain"></div>
+
+    <header class="terminal-header">
+        <canvas class="matrix-bg" id="matrix"></canvas>
+        <div class="typewriter">
+            <h1>Morteza_Rezaei@LTH:~$ 
+                <span class="command-animation">./portfolio --Algorithm_enthusiast</span>
+            </h1>
+        </div>
+    </header>
+
+    <section class="skill-graph">
+        <div class="code-card">
+            <h2># Education</h2>
+            <pre><code class="language-py">class Education:
+    def __init__(self):
+        self.degree = "M.Sc Computer Science"
+        self.university = "Lund University (LTH)"
+        self.specialization = "Software"
+        self.graduation = "2025"</code></pre>
+        </div>
+
+        <div class="code-card">
+            <h2>// Skills</h2>
+            <pre><code class="language-cpp">
+struct Skills {
+    vector&lt;string&gt; languages = {"C", "C++", "Python", "Java", "SQL"};
+    vector&lt;string&gt; tools = {"Git", "IntelliJ", "VS Code"};
+    map&lt;string, string&gt; fluency = {
+        {"Swedish", "fluent"},
+        {"English", "professional"},
+        {"Persian", "native"}
+    };
+};</code></pre>
+        </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <div class="code-card">
+            <h2>/* Projects */</h2>
+            <ul>
+                <li>📚 Master's thesis - A Comparative Analysis of Reinforcement Learning and Transformer Models in the context of Othello</li>
+                <li>🧠 Othello AI: Bitboards + Alpha-Beta</li>
+                <li>♟️ Chess Engine development</li>
+                <li>🌍 Procedural Terrain Generation</li>
+                <li>📚 BabyLM Challenge</li>
+            </ul>
+        </div>
+    </section>
+
+    <script>
+        // Binary Rain Effect
+        function createBinaryRain() {
+            const container = document.getElementById('binaryRain');
+            for (let i = 0; i < 100; i++) {
+                const digit = document.createElement('div');
+                digit.className = 'binary-digit';
+                digit.textContent = Math.random() > 0.5 ? '1' : '0';
+                digit.style.left = Math.random() * 100 + '%';
+                digit.style.animationDuration = Math.random() * 10 + 5 + 's'; 
+                digit.style.fontSize = Math.random() * 12 + 8 + 'px';
+                container.appendChild(digit);
+            }
+        }
+
+        // Matrix Rain Effect
+        const canvas = document.getElementById('matrix');
+        const ctx = canvas.getContext('2d');
+        
+        function initMatrix() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()';
+            const drops = Array(Math.floor(canvas.width/20)).fill(0);
+            
+            function draw() {
+                ctx.fillStyle = 'rgba(0, 17, 0, 0.05)';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                
+                ctx.fillStyle = '#00ff41';
+                ctx.font = '15px monospace';
+                
+                drops.forEach((drop, i) => {
+                    const text = chars[Math.floor(Math.random() * chars.length)];
+                    ctx.fillText(text, i*20, drop*20);
+                    
+                    if(drop*20 > canvas.height && Math.random() > 0.975) drops[i] = 0;
+                    drops[i]++;
+                });
+            }
+            
+            setInterval(draw, 50);
+        }
+
+        // Initialize effects
+        window.addEventListener('resize', () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        });
+
+        createBinaryRain();
+        initMatrix();
+    </script>
+</body>
+</html>
