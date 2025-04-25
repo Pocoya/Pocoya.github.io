@@ -100,7 +100,7 @@
         .code-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 0 15px var(--matrix-green);
-            animation: glitch 0.5s infinite;
+            /* animation: glitch 1.5s infinite; */
         }
 
         .binary-rain {
@@ -189,8 +189,10 @@
             <h2>// Skills</h2>
             <pre><code class="language-cpp">
 struct Skills {
-    vector&lt;string&gt; languages = {"C", "C++", "Python", "Java", "SQL"};
-    vector&lt;string&gt; tools = {"Git", "IntelliJ", "VS Code"};
+    vector&lt;string&gt; languages = {"C", "C++", "Java", "OpenGL", "Python", "SQL"};
+    vector&lt;string&gt; tools = {"GDB", "Git", "Valgrind"};
+    vector&lt;string&gt; libraries = {"BS4", "Keras", "Numpy", "OpenCV", "OpenMP", 
+    "Pthreads", "PyTorch", "Raylib", "Tensorflow", "Transformers"};
     map&lt;string, string&gt; fluency = {
         {"Swedish", "fluent"},
         {"English", "professional"},
@@ -205,11 +207,12 @@ struct Skills {
         <div class="code-card">
             <h2>/* Projects */</h2>
             <ul>
-                <li>📚 Master's thesis - A Comparative Analysis of Reinforcement Learning and Transformer Models in the context of Othello</li>
-                <li>🧠 Othello AI: Bitboards + Alpha-Beta</li>
-                <li>♟️ Chess Engine development</li>
-                <li>🌍 Procedural Terrain Generation</li>
-                <li>📚 BabyLM Challenge</li>
+                <li>📚 Master's thesis: A Comparative Analysis of Reinforcement Learning and Transformer Models in the context of Othello</li>
+                <li>🧠 Othello AI in C++: Using bitboards and alpha-beta pruning</li>
+                <li>♟️ Chess Engine in C++: Using alpha-beta pruning and raylib</li>
+                <li>🌍 Procedural Terrain Generation: Using OpenGL and C++</li>
+                <li>📚 BabyLM: Using the Transformers library and Python</li>
+                <li>🎲 A collection of simple games in Java</li>
             </ul>
         </div>
     </section>
